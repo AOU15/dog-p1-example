@@ -1,7 +1,19 @@
 // Create Dynamic dropdown menu
-  // Make a request and convert response to dropdown menu "https://dog.ceo/api/breeds/list/all"
+// Make a request and convert response to dropdown menu "https://dog.ceo/api/breeds/list/all"
+const getAllbreeds = async () => {
+  try {
+    const allBreedURL = "https://dog.ceo/api/breeds/list/all"
+    const response = await axios.get(allBreedURL)
+    // console.log(response.data.message)
+    const breedList = Object.keys(response.data.message)
+    console.log(breedList)
+  } catch (error) {
+    console.error(error)
+  }
+}
 
 
+getAllbreeds()
 // create form option tags from request
 
 
